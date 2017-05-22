@@ -1,11 +1,12 @@
 var qiniu = require("qiniu");
 //需要填写你的 Access Key 和 Secret Key
-qiniu.conf.ACCESS_KEY = process.env.Access_Key;
-qiniu.conf.SECRET_KEY = process.env.Secret_Key;
+qiniu.conf.UP_HOST = "http://up.qiniug.com"
+qiniu.conf.ACCESS_KEY = process.env.ACCESS_KEY
+qiniu.conf.SECRET_KEY = process.env.SECRET_KEY
 //要上传的空间
 bucket = 'ccnustatic';
 //上传到七牛后保存的文件名
-key = 'muxife.tar';
+key = 'muxifessdddddd.tar';
 //构建上传策略函数
 function uptoken(bucket, key) {
   var putPolicy = new qiniu.rs.PutPolicy(bucket+":"+key);
@@ -21,7 +22,7 @@ function uploadFile(uptoken, key, localFile) {
     qiniu.io.putFile(uptoken, key, localFile, extra, function(err, ret) {
       if(!err) {
         // 上传成功， 处理返回值
-        console.log(ret.hash, ret.key, ret.persistentId);       
+        console.log(ret);       
       } else {
         // 上传失败， 处理返回代码
         console.log(err);
