@@ -3,5 +3,9 @@ node_js:
   - "7"
 install:
   - npm install
+  - npm install qiniu
 script:
   - npm run build
+after_script:
+  - tar -cvf bundle.tar ./static
+  - node deploy.js
