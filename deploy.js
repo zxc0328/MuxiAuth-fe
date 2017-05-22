@@ -1,8 +1,8 @@
 var qiniu = require("qiniu");
 //需要填写你的 Access Key 和 Secret Key
 qiniu.conf.UP_HOST = "http://up.qiniug.com"
-qiniu.conf.ACCESS_KEY = process.env.ACCESS_KEY
-qiniu.conf.SECRET_KEY = process.env.SECRET_KEY
+qiniu.conf.ACCESS_KEY = process.env.Access_Key
+qiniu.conf.SECRET_KEY = process.env.Secret_Key
 //要上传的空间
 bucket = 'ccnustatic';
 //上传到七牛后保存的文件名
